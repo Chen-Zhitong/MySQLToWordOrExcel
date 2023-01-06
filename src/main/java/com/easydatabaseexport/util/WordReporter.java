@@ -372,10 +372,11 @@ public class WordReporter {
                 xwpfRun.setText(k + "、${tableName" + i + "}");
                 //添加目录级别
                 CTDecimalNumber indentNumber = CTDecimalNumber.Factory.newInstance();
-                indentNumber.setVal(BigInteger.valueOf(1));
+                indentNumber.setVal(BigInteger.valueOf(2));
                 CTPPr ppr = CTPPr.Factory.newInstance();
                 ppr.setOutlineLvl(indentNumber);
                 xwpfParagraph.getCTP().setPPr(ppr);
+                xwpfParagraph.setStyle("3"); // 标题2的样式
 
                 //设置分页
                 if (!indexList.contains(i)) {
